@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Modal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<div class="overlay" id="login-overlay">
+  <div class="popup" role="dialog" aria-modal="true">
+    <h1>Login</h1>
+    <form onsubmit="event.preventDefault(); alert('Login submitted!'); closeModal('login')">
+      <input type="email" placeholder="Email" required style="width: 90%; padding: 10px; margin: 10px 0;" />
+      <input type="password" placeholder="Password" required style="width: 90%; padding: 10px; margin: 10px 0;" />
+      <button type="submit" class="closeModalBtn">Submit</button>
+    </form>
+    <button class="closeModalBtn" onclick="closeModal('login')" style="background-color: crimson; margin-top: 10px;">
+      Cancel
+    </button>
+  </div>
+</div>
+
+<body>
+  <div class="container">
+    
+    <button class="openModalBtn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+   
+    <button class="openModalBtn" onclick="openModal('default')">Open Modal</button>
+
+   
+    <button class="openModalBtn" onclick="openModal('modal2')">Open Second Modal</button>
+
+    <button class="openModalBtn" onclick="openModal('login')">Open Login Modal</button>
+
+  </div>
+
+ 
+  <div class="overlay" id="default-overlay">
+    <div class="popup" role="dialog" aria-modal="true">
+      <h1>Default Modal</h1>
+      <p>This is the default modal popup. Click outside or press ESC to close.</p>
+      <button class="closeModalBtn" onclick="closeModal('default')">Close</button>
+    </div>
+  </div>
+
+  
+  <div class="overlay" id="modal2-overlay">
+    <div class="popup" role="dialog" aria-modal="true">
+      <h1>Second Modal</h1>
+      <p>This is a second popup example. Supports the same features.</p>
+      <button class="closeModalBtn" onclick="closeModal('modal2')">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
